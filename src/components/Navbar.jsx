@@ -5,37 +5,25 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="navbar" style={{
-            position: 'fixed',
-            top: 0,
-            width: '100%',
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            backdropFilter: 'blur(10px)',
-            zIndex: 1000,
-            borderBottom: '1px solid rgba(0,0,0,0.05)'
-        }}>
-            <div className="container navbar-container" style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '1rem 1.5rem',
-                height: '70px'
-            }}>
+        <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-[100] border-b border-slate-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex justify-between items-center">
                 {/* Logo */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-primary)', fontWeight: 'bold', fontSize: '1.5rem' }}>
+                <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
                     <div className="p-2 bg-blue-50 rounded-lg">
-                        <Keyboard size={24} className="text-blue-600" />
+                        <Keyboard size={26} className="text-blue-600" />
                     </div>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">KeySkill</span>
+                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                        KeySkill
+                    </span>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="desktop-menu" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <a href="#features" className="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors">Features</a>
-                    <a href="#overview" className="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors">Overview</a>
-                    <a href="#exams" className="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors">Exams</a>
+                <div className="hidden md:flex items-center gap-8">
+                    <a href="#features" className="text-slate-600 font-medium hover:text-blue-600 transition-colors">Features</a>
+                    <a href="#exams" className="text-slate-600 font-medium hover:text-blue-600 transition-colors">Exams</a>
+                    <a href="#overview" className="text-slate-600 font-medium hover:text-blue-600 transition-colors">Overview</a>
                     <button
-                        className="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
+                        className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-200 transition-all transform hover:-translate-y-0.5"
                         onClick={() => window.location.href = 'https://typingfrontend.vercel.app/'}
                     >
                         Get Started
@@ -43,21 +31,31 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Toggle */}
-                <div className="mobile-toggle" style={{ display: 'none' }}>
-                    <button onClick={() => setIsOpen(!isOpen)} style={{ color: 'var(--text-primary)' }}>
-                        {isOpen ? <X /> : <Menu />}
+                <div className="md:hidden">
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                    >
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Menu (placeholder style) */}
-            <style>{`
-        @media (max-width: 768px) {
-          .desktop-menu { display: none !important; }
-          .mobile-toggle { display: block !important; }
-        }
-      `}</style>
-        </nav >
+            {/* Mobile Menu Overlay */}
+            {isOpen && (
+                <div className="md:hidden absolute top-[72px] left-0 w-full bg-white border-b border-slate-100 shadow-xl py-4 px-6 flex flex-col gap-4 animate-fade-in-down">
+                    <a href="#features" className="text-slate-600 font-medium py-2 border-b border-slate-50" onClick={() => setIsOpen(false)}>Features</a>
+                    <a href="#exams" className="text-slate-600 font-medium py-2 border-b border-slate-50" onClick={() => setIsOpen(false)}>Exams</a>
+                    <a href="#overview" className="text-slate-600 font-medium py-2 border-b border-slate-50" onClick={() => setIsOpen(false)}>Overview</a>
+                    <button
+                        className="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold mt-2"
+                        onClick={() => window.location.href = 'https://typingfrontend.vercel.app/'}
+                    >
+                        Get Started
+                    </button>
+                </div>
+            )}
+        </nav>
     );
 };
 

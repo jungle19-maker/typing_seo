@@ -1,9 +1,9 @@
 import React from 'react';
 
 const SEOSection = ({ title, children }) => (
-    <div style={{ marginBottom: '3rem' }}>
-        <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{title}</h2>
-        <div style={{ color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+    <div className="mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-800">{title}</h2>
+        <div className="text-slate-600 leading-loose text-lg space-y-4">
             {children}
         </div>
     </div>
@@ -11,8 +11,8 @@ const SEOSection = ({ title, children }) => (
 
 const SEOContent = () => {
     return (
-        <section className="section" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-            <div className="container">
+        <section className="py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SEOSection title="Free Typing Practice Online">
                     <p>
                         Looking for the best <strong>free typing practice online</strong>? Our platform offers a complete environment for mastering the keyboard.

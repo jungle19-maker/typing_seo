@@ -3,11 +3,11 @@ import { Check, Star } from 'lucide-react';
 
 const PricingPreview = () => {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-blue-50 rounded-bl-full opacity-50 pointer-events-none"></div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
                         Unlock Your Full Potential
@@ -17,47 +17,52 @@ const PricingPreview = () => {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden">
+                <div className="max-w-4xl mx-auto bg-slate-900 rounded-[2rem] p-8 md:p-12 shadow-2xl text-white relative overflow-hidden border border-slate-700">
                     {/* Glossy effect */}
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 blur-3xl rounded-full -mr-20 -mt-20"></div>
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-b from-indigo-500 to-purple-500 opacity-20 blur-[100px] rounded-full -mr-20 -mt-20"></div>
 
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
                         <div className="flex-1">
-                            <h3 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                                <Star className="text-yellow-400 fill-yellow-400" />
+                            <div className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6 border border-indigo-500/30">
+                                Most Popular Choice
+                            </div>
+                            <h3 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
                                 Pro / Premium Access
                             </h3>
-                            <p className="text-slate-400 mb-8">Everything you need to crack your exam.</p>
+                            <p className="text-slate-400 mb-8 text-lg leading-relaxed">
+                                Unlock professional tools designed to help you clear your typing speed test in one go.
+                            </p>
 
                             <ul className="space-y-4">
                                 {[
                                     "Unlimited Typing Exam Practice Sets",
-                                    "Real Exam Interface & Rules",
-                                    "Detailed Accuracy & WPM Reports",
-                                    "Save & Track Progress Lifetime",
-                                    "Ad-free Experience"
+                                    "Real Exam Interface (SSC/Court/Police)",
+                                    "Advanced Accuracy Reports & Heatmaps",
+                                    "Lifetime Progress Tracking",
+                                    "Priority Support & No Ads"
                                 ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <div className="bg-blue-500/20 p-1 rounded-full">
-                                            <Check size={16} className="text-blue-400" />
+                                    <li key={i} className="flex items-center gap-4 group">
+                                        <div className="bg-indigo-500/20 p-1.5 rounded-full group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                                            <Check size={16} className="text-indigo-400 group-hover:text-white" />
                                         </div>
-                                        <span className="text-gray-200">{item}</span>
+                                        <span className="text-slate-200 font-medium">{item}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        <div className="text-center md:text-right bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-                            <span className="block text-slate-400 text-sm mb-1 uppercase tracking-wide">Starting from just</span>
-                            <div className="text-5xl font-bold text-white mb-2">₹199<span className="text-lg text-slate-400 font-normal">/mo</span></div>
-                            <p className="text-slate-400 text-sm mb-6">Cancel anytime</p>
+                        <div className="text-center md:text-right bg-white/5 p-8 md:p-10 rounded-3xl border border-white/10 backdrop-blur-md w-full md:w-auto">
+                            <span className="block text-slate-400 text-sm mb-2 uppercase tracking-wide font-semibold">Limited Time Offer</span>
+                            <div className="text-6xl font-extrabold text-white mb-2 tracking-tight">₹199<span className="text-xl text-slate-400 font-normal ml-1">/mo</span></div>
+                            <p className="text-indigo-300 text-sm mb-8 font-medium">No hidden fees. Cancel anytime.</p>
 
                             <button
-                                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg shadow-blue-900/50"
+                                className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-indigo-900/50 hover:shadow-indigo-900/80 hover:-translate-y-1"
                                 onClick={() => window.location.href = 'https://typingfrontend.vercel.app/pricing'}
                             >
-                                Get Premium Today
+                                Get Premium Now
                             </button>
+                            <p className="mt-4 text-xs text-slate-500">Secure payment via UPI/Cards</p>
                         </div>
                     </div>
                 </div>

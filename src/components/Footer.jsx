@@ -3,20 +3,20 @@ import { Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: 'var(--bg-secondary)', padding: '3rem 0', borderTop: '1px solid var(--bg-card)' }}>
-            <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
+        <footer className="bg-slate-50 py-12 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8">
 
-                <div style={{ textAlign: 'center' }}>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>KeySkill</h3>
-                    <p style={{ color: 'var(--text-secondary)' }}>Master the art of typing.</p>
+                <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-2 text-slate-800">KeySkill</h3>
+                    <p className="text-slate-500">Master the art of typing.</p>
                 </div>
 
-                <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <a href="#" style={{ color: 'var(--text-secondary)' }}><Github size={24} /></a>
-                    <a href="#" style={{ color: 'var(--text-secondary)' }}><Linkedin size={24} /></a>
+                <div className="flex gap-6">
+                    <a href="#" className="text-slate-400 hover:text-blue-600 transition-colors"><Github size={24} /></a>
+                    <a href="#" className="text-slate-400 hover:text-blue-600 transition-colors"><Linkedin size={24} /></a>
                 </div>
 
-                <div style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+                <div className="text-center text-slate-500 text-sm">
                     <p>&copy; {new Date().getFullYear()} KeySkill Project. All rights reserved.</p>
                 </div>
             </div>

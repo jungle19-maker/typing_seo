@@ -11,68 +11,47 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="section" style={{ backgroundColor: 'var(--bg-primary)' }}>
-            <div className="container">
-                <h2 style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '2.5rem' }}>Contact Us</h2>
-                <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
+        <section id="contact" className="py-20 lg:py-24 bg-white border-t border-slate-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-900">Contact Us</h2>
+                <p className="text-center text-slate-600 mb-12 text-lg">
                     Have questions, feedback, or collaboration ideas? Feel free to contact us.
                 </p>
 
-                <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div className="max-w-xl mx-auto">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Name</label>
+                            <label className="block mb-2 text-sm font-medium text-slate-700">Name</label>
                             <input
                                 type="text"
                                 required
-                                style={{
-                                    width: '100%',
-                                    padding: '1rem',
-                                    borderRadius: '8px',
-                                    backgroundColor: 'var(--bg-secondary)',
-                                    border: '1px solid var(--bg-card)',
-                                    color: 'white'
-                                }}
+                                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                                 placeholder="Your Name"
                             />
                         </div>
                         <div>
-                            <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Email</label>
+                            <label className="block mb-2 text-sm font-medium text-slate-700">Email</label>
                             <input
                                 type="email"
                                 required
-                                style={{
-                                    width: '100%',
-                                    padding: '1rem',
-                                    borderRadius: '8px',
-                                    backgroundColor: 'var(--bg-secondary)',
-                                    border: '1px solid var(--bg-card)',
-                                    color: 'white'
-                                }}
+                                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                                 placeholder="your@email.com"
                             />
                         </div>
                         <div>
-                            <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Message</label>
+                            <label className="block mb-2 text-sm font-medium text-slate-700">Message</label>
                             <textarea
                                 required
                                 rows="5"
-                                style={{
-                                    width: '100%',
-                                    padding: '1rem',
-                                    borderRadius: '8px',
-                                    backgroundColor: 'var(--bg-secondary)',
-                                    border: '1px solid var(--bg-card)',
-                                    color: 'white'
-                                }}
+                                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
                                 placeholder="How can we help?"
                             ></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
-                            <Send size={18} /> Send Message
+                        <button type="submit" className="w-full btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-200 hover:-translate-y-1 transition-all flex justify-center items-center gap-2">
+                            <Send size={20} /> Send Message
                         </button>
                     </form>
-                    {status && <p style={{ marginTop: '1rem', color: 'var(--success)', textAlign: 'center' }}>{status}</p>}
+                    {status && <p className="mt-4 text-green-600 font-medium text-center bg-green-50 py-2 rounded-lg">{status}</p>}
                 </div>
             </div>
         </section>

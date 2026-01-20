@@ -15,8 +15,8 @@ function App() {
     <div className="app">
       <Navbar />
       <Hero />
-      <Features />
       <IndianGovernmentExams />
+      <Features />
       <PricingPreview />
       <GameExperience />
       <ProjectOverview />
